@@ -1,4 +1,6 @@
 import unittest
+import os
+import tempfile
 
 from app import app
 
@@ -19,6 +21,40 @@ class BasicTestCase(unittest.TestCase):
     def test_database(self):
         tester = os.path.exists("flaskr.db")
         self.asserTrue(tester)
+
+class FlaskrTestCase(unittest.TestCase):
+    # set up a new temp database per test
+    def setUp(self):
+        self.db_fd, app.app.config['DATABASE'] = tempfile.mkstemp()
+        app.app.config['TESTING'] = True
+        self.app = app.app.test_client()
+        app.init_db()
+
+    #destroy the temp database per test
+    def tearDown(self):
+        os.close(self.db_fd)
+        os.unlink(app.app.config['DATABASE'])
+
+    def register(self, username,password):
+        return self.app.post('/register', data=dict(
+            username=username,
+            password=password
+        ),follow_redirects = True)
+
+    #test messages
+    def test_register_messages(self):
+        '''Test register messages using helper functions'''
+        rv = self.register(
+            "cat@123.com",
+            ""
+        )
+        asser b'Password is required' in rv.data
+
+        rv = self.register(
+            "",
+            "123"
+        )
+        asser b'Username is required' in rv.data
 
 if __name__ == '__main__':
     unittest.main()
