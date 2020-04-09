@@ -7,7 +7,7 @@ def sober_date():
 
     today = datetime.date.today()
     diff = (today - date1).days
-    print("You have stayed sober for {} days! Good job!!!".format(diff))
+    return "You have stayed sober for {} days! Good job!!!".format(diff)
 
 
 sober_date()
