@@ -4,8 +4,8 @@ from app.forms import LoginForm
 
 @app.route('/')
 
-@app.route('/calculator')
-def calculator():
+@app.route('/hello')
+def hello():
     return render_template('hello.html')
 
 @app.route('/login')
