@@ -1,20 +1,29 @@
 from app import app
-from flask import render_template,flash, redirect
+from flask import render_template,flash, redirect, request
 from app.forms import DateForm
+import datetime
 
 @app.route('/')
 def index():
     return render_template('index.html', title="Welcome")
 
-@app.route('/sobriety_date', methods=['GET','POST'])
+@app.route('/sobriety_date', methods=['GET'])
 def get_date():
     form = DateForm()
     if form.validate_on_submit():
         flash("Username is {}, date selected is {}".format(form.username.data, form.date.data))
-        return  redirect('/answer')
+        return  redirect('/sobriety_date')
     return render_template('sobriety_date.html', title="Get Sobriety Date", form=form)
 
-@app.route('/answer', methods =['GET', 'POST'])
+@app.route('/sobriety_date', methods =['POST'])
 def show_date():
+    username = request.form['username']
+    date = request.form['date']
+    year, month, day = map(int, date.split('-'))
+    date1 = datetime.date(year, month, day)
 
-    return render_template('')
+    today = datetime.date.today()
+    diff = (today - date1).days
+    return "Congrats {}, you have stayed sober for {} days! Good job!!!".format(username,diff)
+
+   
