@@ -1,1 +1,1 @@
-web: flask db upgrade; flask translate compile; gunicorn sobriety-calculator:app
+web: flask sobriety-calculator:app
