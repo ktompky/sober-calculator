@@ -1,1 +1,1 @@
-web: flask sobriety-calculator:app
+web: flask sobriety_app:app 
