@@ -15,7 +15,7 @@ def get_date():
         return  redirect('/sobriety_date')
     return render_template('sobriety_date.html', title="Get Sobriety Date", form=form)
 
-@app.route('/sobriety_date', methods =['POST'])
+@app.route('/sobriety_date_results', methods =['POST'])
 def show_date():
     username = request.form['username']
     date = request.form['date']
@@ -24,6 +24,6 @@ def show_date():
 
     today = datetime.date.today()
     diff = (today - date1).days
-    return "Congrats {}, you have stayed sober for {} days! Good job!!!".format(username,diff)
+    return render_template('sobriety_date_results.html', title ="Your Results", username=username, diff=diff)
 
    
