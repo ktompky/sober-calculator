@@ -1,1 +1,1 @@
-web: flask sobriety_app:app
+web: gunicorn sobriety_app:app
