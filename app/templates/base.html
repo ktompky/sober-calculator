@@ -1,14 +1,14 @@
 <html>
 
 <head>
-    {% if title %}
-    <title>{{ title }} - Sobriety App</title>
-    {% else %}
+    
     <title>Welcome to the Sobriety App!</title>
-    {% endif %}
+    
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <style type="text/css"></style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
 </head>
 

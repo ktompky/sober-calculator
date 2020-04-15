@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+<div>
     <h1>See your sobriety information!</h1>
     <form action="/sobriety_date_results" method="post" novalidate>
         {{ form.hidden_tag()}}
@@ -14,4 +16,6 @@
         </p>
         <p> {{ form.submit() }}</p>
     </form>
+
+</div>
 {% endblock %}
