@@ -1,28 +1,24 @@
 body {
-    background-color: rgb(192, 206, 129);
-   
+    background-color: #d19cf0;
 }
 
-
-html body nav.navbar.navbar-light ul {
-    list-style: none;
-}
-
-h1 {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
+  /* Remove the navbar's default margin-bottom and rounded borders */ 
+  .navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: black;
   }
-
-a {
-    margin: auto;
-    width: 50%;
-    padding: 20px;
-    display: block;
-}
-form {
-    margin: auto;
-    width: 50%;
-    padding: 20px;
-    display: block;
-}
+  .row.content {
+      text-align: center;
+      align-content: center;
+      justify-content: center;
+  }
+  
+ /* On small screens, set height to 'auto' for sidenav and grid */
+  @media screen and (max-width: 767px) {
+    .sidenav {
+      height: auto;
+      padding: 15px;
+    }
+    .row.content {height:auto;} 
+  }
