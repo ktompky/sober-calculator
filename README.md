@@ -2,13 +2,10 @@
 
 **Features of Sobriety App**
 
--show sober days
-<br>
--user log in to keep track of sobriety counter
-<br>
--give user badges for sobriety milestone
-<br>
--resources for staying on track for sobriety
+* show sober days
+* user log in to keep track of sobriety counter
+* give user badges for sobriety milestone
+* resources for staying on track for sobriety
 
 
 **Staying sober is hard, especially when you have to download an app to keep track of your days or keep it in your head. This app will show you your current days in sobriety.**

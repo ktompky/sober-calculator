@@ -1,1 +1,2 @@
-web: gunicorn sobriety_app:app
+web: gunicorn --pythonpath app sobriety_app:app
+
