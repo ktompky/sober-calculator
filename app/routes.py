@@ -12,8 +12,9 @@ def index():
 @app.route('/sobriety_date', methods=['GET'])
 def get_date():
     form = DateForm()
+ 
     if form.validate_on_submit():
-        flash("Username is {}, date selected is {}".format(form.username.data, form.date.data))
+        #flash("Username is {}, date selected is {}".format(form.username.data, form.date.data))
         return  redirect('/sobriety_date')
     return render_template('sobriety_date.html', title="Get Sobriety Date", form=form)
 
