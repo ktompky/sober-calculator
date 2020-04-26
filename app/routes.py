@@ -9,6 +9,10 @@ from dateutil import relativedelta
 def index():
     return render_template('index.html', title="Welcome")
 
+@app.route('/about')
+def get_about():
+    return render_template('about.html', title="About the page")
+
 @app.route('/sobriety_date', methods=['GET'])
 def get_date():
     form = DateForm()
