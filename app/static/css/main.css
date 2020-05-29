@@ -13,9 +13,9 @@ body {
 .sobriety {
   padding: 50px;
 }
-.sobriety-date {
+/*.sobriety-date {
   text-align: center;
-}
+}*/
   /* Remove the navbar's default margin-bottom and rounded borders */ 
   .navbar {
     margin-bottom: 0;
