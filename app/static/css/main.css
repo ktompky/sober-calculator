@@ -1,5 +1,8 @@
 body {
-    background-color: #d19cf0;
+    background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/yoga-woman_W23EUNXBCG.jpg");
+    background-size: cover;
+    
+
 }
 
 .index-page-container {
@@ -13,9 +16,7 @@ body {
 .sobriety {
   padding: 50px;
 }
-/*.sobriety-date {
-  text-align: center;
-}*/
+
   /* Remove the navbar's default margin-bottom and rounded borders */ 
   .navbar {
     margin-bottom: 0;
